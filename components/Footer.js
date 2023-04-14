@@ -12,7 +12,7 @@ const Footer = () => {
             <div className="flex flex-wrap justify-between items-center">
               <div className="w-full lg:w-auto mb-12 lg:mb-0">
                 <a className="inline-block mx-auto" href="#">
-                  <img className="h-12" src="/nigodo-assets/logo.png" alt=""/>
+                  <img className="h-12" src="/favicon.png" alt=""/>
                 </a>
               </div>
               <div className="w-full lg:w-auto mb-12 lg:mb-0">
