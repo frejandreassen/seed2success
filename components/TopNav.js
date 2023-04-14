@@ -15,7 +15,7 @@ const TopNav = () => {
         <Link href="/">
           <a className="text-lg font-bold mr-auto">
             <div className="flex items-center">
-              <img className="h-12 rounded-full" src="https://storage.googleapis.com/andreassens.appspot.com/frej_andreassen_pfp.jpg" alt="" width="auto"/>
+              <img className="h-12 rounded-full" src="/favicon.png" alt="" width="auto"/>
               <div className="ml-3 text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800 dark:hover:text-green-600 dark:text-green-500 dark:hover:text-green-600">Seed2Success</div>
             </div>
           </a>
@@ -32,7 +32,7 @@ const TopNav = () => {
         <ul className="hidden xl:flex mr-12">
           <li className="mr-10"><ThemeSwitch/></li>
           <li><Link href="/blog"><a className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800 dark:hover:text-green-600 dark:hover:text-green-600" >Blog</a></Link></li>
-          <li><Link href="/projects"><a className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800 dark:hover:text-green-600 dark:hover:text-green-600" >Projects</a></Link></li>
+          <li><Link href="/posts"><a className="text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800 dark:hover:text-green-600 dark:hover:text-green-600" >Posts</a></Link></li>
           <li><Link href="/about"><a className="text-lg font-extrabold hover:text-indigo-800 dark:hover:text-green-600 dark:hover:text-green-600" >About</a></Link></li>
         </ul>
         <div className="hidden xl:flex items-center">
@@ -50,7 +50,7 @@ const TopNav = () => {
           <div className="flex items-center mb-8">
             <Link href="/">
               <a className="mr-auto text-2xl font-bold leading-none">
-                <img className="h-6 rounded-full" src="https://storage.googleapis.com/andreassens.appspot.com/frej_andreassen_pfp.jpg" alt="" width="auto"/>
+                <img className="h-6 rounded-full" src="/favicon.png" alt="" width="auto"/>
               </a>
             </Link>
             <button className="navbar-close" onClick={handleDrawerToggle}>
@@ -62,7 +62,7 @@ const TopNav = () => {
           <div>
             <ul>
               <li className="mb-1"><Link href="/blog"><a className="block p-4 text-lg font-extrabold rounded" href="#">Blog</a></Link></li>
-              <li className="mb-1"><Link href="/projects"><a className="block p-4 text-lg font-extrabold rounded" href="#">Projects</a></Link></li>
+              <li className="mb-1"><Link href="/posts"><a className="block p-4 text-lg font-extrabold rounded" href="#">Posts</a></Link></li>
               <li className="mb-1"><Link href="/about"><a className="block p-4 text-lg font-extrabold rounded" href="#">About</a></Link></li>
             </ul>
           </div>

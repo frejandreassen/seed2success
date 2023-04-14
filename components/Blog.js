@@ -2,31 +2,31 @@ import {useState} from 'react'
 import Link from 'next/link'
 import Moment from 'react-moment';
 
-const Blog = ({projects, MAX_DISPLAY}) => {
-  const [filteredProjects, setFilteredProjects] = useState(projects)
+const Blog = ({posts, MAX_DISPLAY}) => {
+  const [filteredPosts, setFilteredPosts] = useState(posts)
   const [activeCategory, setActiveCategory] = useState('')
   const [search, setSearch] = useState('')
 
   const filterByCategory = (category) => {
     
     if (!category) {
-      setFilteredProjects(projects)
+      setFilteredPosts(posts)
       setActiveCategory('')
       return
     }
-    const result = projects.filter(project => project.categories.includes(category))
+    const result = posts.filter(post => post.categories.includes(category))
     setActiveCategory(category)
-    setFilteredProjects(result)
+    setFilteredPosts(result)
   }
 
   const filterBySearch = (search) => {
     setSearch(search)
     setActiveCategory('')
-    const result = projects.filter((project) => 
-    { const searchContent = project.title + project.description + project.content + project.categories.join('')
+    const result = posts.filter((post) => 
+    { const searchContent = post.meta_title + post.description + post.content + post.categories.join('')
       return searchContent.toLowerCase().includes(search.toLowerCase())
     })
-    setFilteredProjects(result)
+    setFilteredPosts(result)
   }
 
   return (
@@ -85,18 +85,18 @@ const Blog = ({projects, MAX_DISPLAY}) => {
           </div>
       </div>
       <div className="flex flex-wrap md:mx-4 mb-8">
-        {filteredProjects.slice(0, MAX_DISPLAY).map((project, i) => (
+        {filteredPosts.slice(0, MAX_DISPLAY).map((post, i) => (
           <div key={i} className="w-full lg:w-1/2 md:px-4 mb-8">
             <div className="bg-white dark:bg-gray-900 border-3 border-indigo-900 dark:border-green-500  shadow-md dark:shadow-green-800 rounded-2xl overflow-hidden">
-              <img className="h-64 md:h-96 w-full block object-cover" src={project.coverImageUrl} alt={project.coverImageAltText} />
+              <img className="h-64 md:h-96 w-full block object-cover" src={`https://falkenberg.andreassens.se/assets/${post.cover_image}`} alt={post.cover_image_alt_text} />
               <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900 dark:border-green-500">
-                {project.categories.map((category,i) => (
+                {post.categories.map((category,i) => (
                   <span key={i} className="inline-flex mb-6 mr-3 h-6 items-center justify-center text-xs font-extrabold px-2 text-indigo-900 rounded border-2 border-indigo-900 dark:border-green-500  bg-green-200 dark:bg-green-500 uppercase shadow-sm">{category}</span>
                 ))}
-                <p className="text-xl font-bold text-gray-400 mb-2">{project.author} • <Moment locale="sv" format="DD MMM YYYY">{project.created}</Moment></p>
-                <h2 className="text-2xl font-extrabold mb-6">{project.title}</h2>
-                <p className="text-xl font-bold mb-6">{project.description}</p>
-                <Link href={'/projects/'+ project.slug}><a className="inline-block text-xl font-bold text-indigo-500 hover:text-indigo-600 dark:text-green-500 dark:hover:text-green-600">Read More</a></Link>
+                <p className="text-xl font-bold text-gray-400 mb-2">{post.author} • <Moment locale="sv" format="DD MMM YYYY">{post.created}</Moment></p>
+                <h2 className="text-2xl font-extrabold mb-6">{post.title}</h2>
+                <p className="text-xl font-bold mb-6">{post.description}</p>
+                <Link href={'/posts/'+ post.slug}><a className="inline-block text-xl font-bold text-indigo-500 hover:text-indigo-600 dark:text-green-500 dark:hover:text-green-600">Read More</a></Link>
               </div>
             </div>
           </div>
