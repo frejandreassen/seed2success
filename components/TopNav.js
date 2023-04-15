@@ -15,7 +15,7 @@ const TopNav = () => {
         <Link href="/">
           <a className="text-lg font-bold mr-auto">
             <div className="flex items-center">
-              <img className="h-12 rounded-full" src="/favicon.png" alt="" width="auto"/>
+              <img className="h-12 rounded-full" src="/favicon.png  " alt="" width="auto"/>
               <div className="ml-3 text-lg mr-10 2xl:mr-16 font-extrabold hover:text-indigo-800 dark:hover:text-green-600 dark:text-green-500 dark:hover:text-green-600">Seed2Success</div>
             </div>
           </a>

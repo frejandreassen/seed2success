@@ -88,7 +88,7 @@ const Blog = ({posts, MAX_DISPLAY}) => {
         {filteredPosts.slice(0, MAX_DISPLAY).map((post, i) => (
           <div key={i} className="w-full lg:w-1/2 md:px-4 mb-8">
             <div className="bg-white dark:bg-gray-900 border-3 border-indigo-900 dark:border-green-500  shadow-md dark:shadow-green-800 rounded-2xl overflow-hidden">
-              <img className="h-64 md:h-96 w-full block object-cover" src={`https://falkenberg.andreassens.se/assets/${post.cover_image}`} alt={post.cover_image_alt_text} />
+              <img className="h-64 md:h-96 w-full block object-cover" src={`https://storage.googleapis.com/andreassens.appspot.com/${post.cover_image}`} alt={post.cover_image_alt_text} />
               <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900 dark:border-green-500">
                 {post.categories.map((category,i) => (
                   <span key={i} className="inline-flex mb-6 mr-3 h-6 items-center justify-center text-xs font-extrabold px-2 text-indigo-900 rounded border-2 border-indigo-900 dark:border-green-500  bg-green-200 dark:bg-green-500 uppercase shadow-sm">{category}</span>
