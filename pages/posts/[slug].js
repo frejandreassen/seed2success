@@ -2,6 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import Moment from 'react-moment'
 import ReactMarkdown from 'react-markdown'
+import Image from "next/image";
 
 import TopNav from '../../components/TopNav'
 import Footer from '../../components/Footer'
@@ -49,7 +50,7 @@ const post = ({ post }) => {
                 <span key={i} className="inline-flex mb-6 mr-3 h-6 items-center justify-center text-xs font-extrabold px-2 text-indigo-900 rounded border-2 border-indigo-900 dark:border-green-500  bg-green-200 uppercase shadow-sm">{category}</span>
               ))}
             </div>
-            <img className="block w-full mb-12 h-112 lg:h-140 object-cover border-3 border-indigo-900 dark:border-green-500  rounded-2xl shadow-lg" src={`https://storage.googleapis.com/andreassens.appspot.com/${post.cover_image}`} alt={post.cover_image_alt_text}/>
+            <img className="block w-2/3 mx-auto mb-12 h-112 lg:h-140 object-cover border-3 border-indigo-900 dark:border-green-500  rounded-2xl shadow dark:shadow-green-800" src={`https://falkenberg.andreassens.se/assets/${post.cover_image}`} alt={post.cover_image_alt_text}/>
             <div className="max-w-4xl mx-auto">
               <div className="pt-10 pb-8 prose 
                 dark:text-gray-200

@@ -1,6 +1,7 @@
 import {useState} from 'react'
 import Link from 'next/link'
 import Moment from 'react-moment';
+import Image from "next/image";
 
 const Blog = ({posts, MAX_DISPLAY}) => {
   const [filteredPosts, setFilteredPosts] = useState(posts)
@@ -51,7 +52,7 @@ const Blog = ({posts, MAX_DISPLAY}) => {
         </div>
       </div>
       <div className="mb-10">
-        <div className="lg:flex items-center mb-4">
+        <div className="lg:flex items-center justify-center mb-4">
           <button 
             onClick={() => filterByCategory('')} 
             className={((activeCategory=='') ? 'font-extrabold': 'text-gray-400 hover:text-gray-500') + "inline-block mb-4 mr-6 xl:mr-16 text-xl font-extrabold"}
@@ -88,7 +89,15 @@ const Blog = ({posts, MAX_DISPLAY}) => {
         {filteredPosts.slice(0, MAX_DISPLAY).map((post, i) => (
           <div key={i} className="w-full lg:w-1/2 md:px-4 mb-8">
             <div className="bg-white dark:bg-gray-900 border-3 border-indigo-900 dark:border-green-500  shadow-md dark:shadow-green-800 rounded-2xl overflow-hidden">
-              <img className="h-64 md:h-96 w-full block object-cover" src={`https://storage.googleapis.com/andreassens.appspot.com/${post.cover_image}`} alt={post.cover_image_alt_text} />
+              {/* <img className="h-64 md:h-96 w-full block object-cover" src={`https://falkenberg.andreassens.se/assets/${post.cover_image}`} alt={post.cover_image_alt_text} /> */}
+              <Image 
+                src={`https://falkenberg.andreassens.se/assets/${post.cover_image}`}
+                alt={post.cover_image_alt_text}
+                height={64}
+                width="100%"
+                layout="responsive"
+                className="h-64 md:h-96 w-full block object-cover"
+              />
               <div className="px-6 py-8 md:p-10 border-t-3 border-indigo-900 dark:border-green-500">
                 {post.categories.map((category,i) => (
                   <span key={i} className="inline-flex mb-6 mr-3 h-6 items-center justify-center text-xs font-extrabold px-2 text-indigo-900 rounded border-2 border-indigo-900 dark:border-green-500  bg-green-200 dark:bg-green-500 uppercase shadow-sm">{category}</span>
